@@ -6,8 +6,8 @@ import { faEvernote } from '@fortawesome/free-brands-svg-icons';
 
 function Panels() {
 	return (
-		<ul>
-			<li>
+		<ul className='panel'>
+			<li className='on'>
 				<div className='bg'></div>
 			</li>
 			<li>
