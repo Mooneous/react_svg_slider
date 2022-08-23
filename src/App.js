@@ -3,7 +3,15 @@ import Btns from './Btns';
 import Panels from './Panels';
 
 function App() {
-	return <main></main>;
+	return (
+		<main>
+			<h1>
+				TYPHOGRAPHY <strong>DESIGN</strong>
+			</h1>
+			<Btns />
+			<Panels />
+		</main>
+	);
 }
 
 export default App;

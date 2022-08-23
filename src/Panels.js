@@ -5,7 +5,22 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faEvernote } from '@fortawesome/free-brands-svg-icons';
 
 function Panels() {
-	return <></>;
+	return (
+		<ul>
+			<li>
+				<div className='bg'></div>
+			</li>
+			<li>
+				<div className='bg'></div>
+			</li>
+			<li>
+				<div className='bg'></div>
+			</li>
+			<li>
+				<div className='bg'></div>
+			</li>
+		</ul>
+	);
 }
 
 export default Panels;
