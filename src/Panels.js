@@ -4,9 +4,12 @@ import { faSketch } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faEvernote } from '@fortawesome/free-brands-svg-icons';
 
-function Panels() {
+import { forwardRef } from 'react';
+
+const Panels = forwardRef((_, ref) => {
+	//props로 전달받을값없음, ref로 부모요소인 Apps에게 ul요소전달
 	return (
-		<ul className='panel'>
+		<ul className='panel' ref={ref}>
 			<li className='on'>
 				<div className='bg'></div>
 			</li>
@@ -21,6 +24,6 @@ function Panels() {
 			</li>
 		</ul>
 	);
-}
+});
 
 export default Panels;
