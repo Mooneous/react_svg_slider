@@ -1,4 +1,5 @@
 function Btns(props) {
+	const delay = 800;
 	const getItems = (item) => {
 		const panel = item.current;
 		const panel_items = panel.children;
@@ -29,15 +30,34 @@ function Btns(props) {
 			panel_items[next_index].classList.remove('down');
 			panel_items[next_index].classList.add('on');
 			panel.querySelector('.up').classList.remove('up');
-		}, 500);
+		}, delay);
 	};
+
+	const moveDown = () => {
+		const [panel, panel_items, len, current_item, current_index] = getItems(props.panel);
+		//현재 인덱스값이 0이 아니면 첫패널 아니므로 -1해주고, 0이면 첫패널인거고 len-1=3으로 그니까 마지막패널로 가즈아~
+		let prev_index = null;
+		current_index !== 0 ? (prev_index = current_index - 1) : (prev_index = len - 1);
+
+		//기존 활성화 패널을 아래로 내려서 숨기고 앞으로 활성화될 패널을 위쪽에 배치해서 초기화
+		current_item.classList.remove('on');
+		current_item.classList.add('down');
+		panel_items[prev_index].classList.add('up');
+
+		setTimeout(() => {
+			panel_items[prev_index].classList.remove('up');
+			panel_items[prev_index].classList.add('on');
+			panel.querySelector('.down').classList.remove('down');
+		}, delay);
+	};
+
 	return (
 		<>
 			<a href='#' className='btnUp' onClick={moveUp}>
 				<span></span>
 				<em>UP</em>
 			</a>
-			<a href='#' className='btnDown'>
+			<a href='#' className='btnDown' onClick={moveDown}>
 				<span></span>
 				<em>DOWN</em>
 			</a>
