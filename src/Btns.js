@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 
 function Btns(props) {
 	const delay = 800;
@@ -14,7 +14,6 @@ function Btns(props) {
 		return [panel, panel_items, len, current_item, current_index];
 	};
 
-	//현재enableClick이true가아니면패널이모션중이니까여기서끝~true면 enableClick을false상태로변경하고아래코드실행~~
 	const moveUp = () => {
 		if (!enableClick.current) return;
 		enableClick.current = false;
@@ -30,7 +29,6 @@ function Btns(props) {
 			panel_items[next_index].classList.remove('down');
 			panel_items[next_index].classList.add('on');
 			panel.querySelector('.up').classList.remove('up');
-			//delay시간뒤에 클릭할수있어?있어!로 상태변경
 			setTimeout(() => {
 				enableClick.current = true;
 			}, delay);
@@ -58,6 +56,10 @@ function Btns(props) {
 			}, delay);
 		}, delay);
 	};
+
+	useEffect(() => {
+		props.panel.current.children[0].classList.add('on');
+	}, []);
 
 	return (
 		<>
