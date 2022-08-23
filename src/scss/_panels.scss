@@ -83,3 +83,48 @@
 		}
 	}
 }
+
+@media screen and (max-width: $wide) {
+	.panel {
+		li {
+			.bg {
+				svg {
+					font-size: 40vw;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $web) {
+	.panel {
+		li {
+			.bg {
+				svg {
+					font-size: 45vw;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $tablet) {
+	.panel {
+		li {
+			.bg {
+				svg {
+					font-size: 55vw;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $mobile) {
+	.panel {
+		li {
+			.bg {
+				svg {
+					font-size: 65vw;
+				}
+			}
+		}
+	}
+}
